@@ -39,9 +39,8 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSAppTransportSecurity</key>
-	<!--See http://ste.vn/2015/06/10/configuring-app-transport-security-ios-9-osx-10-11/ -->
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
@@ -52,5 +51,18 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AvenirNextLTPro-Bold.otf</string>
+		<string>AvenirNextLTPro-BoldItalic.otf</string>
+		<string>AvenirNextLTPro-Demi.otf</string>
+		<string>AvenirNextLTPro-DemiItalic.otf</string>
+		<string>AvenirNextLTPro-Italic.otf</string>
+		<string>AvenirNextLTPro-Light.otf</string>
+		<string>AvenirNextLTPro-LightItalic.otf</string>
+		<string>AvenirNextLTPro-Regular.otf</string>
+		<string>AvenirNextLTPro-Medium.otf</string>
+		<string>AvenirNextLTPro-MediumIt.otf</string>
+	</array>
 </dict>
 </plist>
