@@ -8,9 +8,11 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
-  View
+  View,
+  StatusBar
 } from 'react-native';
+
+import Text from './components/Text';
 
 import fonts from './styles/fonts';
 import theme from './styles/theme';
@@ -25,16 +27,29 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={[styles.welcome, theme.typography.header1]}>
-          Welcome!
+      <View style={[theme.base.main, styles.container]}>
+        <Text style={theme.typography.header1}>
+          Header 1
         </Text>
-        <Text style={[styles.instructions, theme.typography.header2]}>
-          To get started, edit App.js
+        <Text style={theme.typography.header2}>
+          Header 2
         </Text>
-        <Text style={[styles.instructions, theme.typography.small]}>
-          {instructions}
+        <Text style={theme.typography.header3}>
+          Header 3
         </Text>
+        <Text style={theme.typography.paragraph}>
+          Paragraph
+        </Text>
+        <Text style={theme.typography.caption}>
+          Caption
+        </Text>
+        <Text style={theme.typography.small}>
+          Small
+        </Text>
+        <View style={[theme.base.primary, styles.palette]}/>
+        <View style={[theme.base.secondary, styles.palette]}/>
+        <View style={[theme.base.tertiary, styles.palette]}/>
+        <View style={[theme.base.grey, styles.palette]}/>
       </View>
     );
   }
@@ -43,17 +58,10 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    paddingTop: 24,
   },
-  welcome: {
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
-  },
+  palette: {
+    width: 100,
+    height: 100
+  }
 });

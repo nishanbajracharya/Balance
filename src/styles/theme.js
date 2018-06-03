@@ -3,6 +3,24 @@ import { StyleSheet } from 'react-native';
 import fonts from '../constants/fonts';
 import colors from '../constants/colors';
 
+const base = StyleSheet.create({
+  main: {
+    backgroundColor: colors.palette.background
+  },
+  primary: {
+    backgroundColor: colors.palette.primary
+  },
+  secondary: {
+    backgroundColor: colors.palette.secodary
+  },
+  tertiary: {
+    backgroundColor: colors.palette.tertiary
+  },
+  grey: {
+    backgroundColor: colors.palette.grey
+  }
+});
+
 const typography = StyleSheet.create({
   base: {
     backgroundColor: colors.palette.background
@@ -40,6 +58,7 @@ const typography = StyleSheet.create({
 });
 
 const theme = {
+  base,
   typography
 }
 
