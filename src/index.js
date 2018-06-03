@@ -13,21 +13,22 @@ import {
 } from 'react-native';
 
 import Text from './components/Text';
+import AppBar from './components/AppBar';
 
 import fonts from './styles/fonts';
 import theme from './styles/theme';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import colors from './constants/colors';
+import getStatusBarHeight from './utils/getStatusBarHeight';
 
 export default class App extends Component {
   render() {
     return (
       <View style={[theme.base.main, styles.container]}>
+        <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.palette.background}
+        />
+        <AppBar />
         <Text style={theme.typography.header1}>
           Header 1
         </Text>
@@ -46,10 +47,10 @@ export default class App extends Component {
         <Text style={theme.typography.small}>
           Small
         </Text>
-        <View style={[theme.base.primary, styles.palette]}/>
-        <View style={[theme.base.secondary, styles.palette]}/>
-        <View style={[theme.base.tertiary, styles.palette]}/>
-        <View style={[theme.base.grey, styles.palette]}/>
+        <View style={[theme.base.primary, styles.palette]} />
+        <View style={[theme.base.secondary, styles.palette]} />
+        <View style={[theme.base.tertiary, styles.palette]} />
+        <View style={[theme.base.grey, styles.palette]} />
       </View>
     );
   }
@@ -58,7 +59,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 24,
+    paddingTop: getStatusBarHeight(),
   },
   palette: {
     width: 100,
