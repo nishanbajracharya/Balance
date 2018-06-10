@@ -58,13 +58,14 @@ const Button = ({
   disabledLabelStyle,
   ...props
 }) => <RNButton
+    {...props}
     style={styles.touchable}
     title={label.toUpperCase()}
     disabledTitleStyle={[styles.disabledText, disabledLabelStyle]}
     titleStyle={[styles.text, flat && styles.textFlat, labelStyle]}
     disabledStyle={[styles.disabled, flat && styles.disabledFlat, disabledStyle]}
     buttonStyle={[styles.buttonBase, flat && styles.buttonFlat, !flat && styles.shadow, style]}
-    {...props} />
+  />
 
 Button.defaultProps = {
   style: {},

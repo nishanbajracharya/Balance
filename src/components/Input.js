@@ -39,19 +39,27 @@ class Input extends React.Component {
   render() {
     return <RNInput
       {...this.props}
-      errorStyle={styles.error}
-      inputStyle={styles.input}
-      containerStyle={styles.container}
-      placeholderTextColor={colors.text.placeholder}
-      onFocus={() => this.setState({ isActive: true })}
-      onBlur={() => this.setState({ isActive: false })}
-      inputContainerStyle={this.state.isActive ? styles.inputContainerActive : styles.inputContainer}
+      errorStyle={[styles.error, this.props.errorStyle]}
+      inputStyle={[styles.input, this.props.inputStyle]}
+      placeholderTextColor={this.props.placeholderColor}
+      containerStyle={[styles.container, this.props.containerStyle]}
+      onBlur={props => { this.setState({ isActive: false }); this.props.onBlur(props) }}
+      onFocus={props => { this.setState({ isActive: true }); this.props.onFocus(props) }}
+      inputContainerStyle={this.state.isActive ? [styles.inputContainerActive, this.props.inputContainerActiveStyle] : [styles.inputContainer, this.props.inputContainerStyle]}
     />;
   }
 }
 
 Input.defaultProps = {
-  placeholder: 'Input'
+  onBlur: f => f,
+  errorStyle: {},
+  inputStyle: {},
+  onFocus: f => f,
+  containerStyle: {},
+  placeholder: 'Input',
+  inputContainerStyle: {},
+  inputContainerActiveStyle: {},
+  placeholderColor: colors.text.placeholder,
 }
 
 export default Input;
