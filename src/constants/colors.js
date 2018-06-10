@@ -19,8 +19,19 @@ const messages = {
   success: '#42D98E'
 }
 
+const disabled = {
+  background: '#F2F3F4'
+}
+
+const basic = {
+  black: '#000000',
+  white: '#FFFFFF'
+}
+
 export default {
   text,
+  basic,
   palette,
-  messages
+  messages,
+  disabled
 }

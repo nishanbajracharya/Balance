@@ -14,6 +14,7 @@ import {
 
 import Text from './components/Text';
 import AppBar from './components/AppBar';
+import Button from './components/Button';
 
 import fonts from './styles/fonts';
 import theme from './styles/theme';
@@ -25,8 +26,8 @@ export default class App extends Component {
     return (
       <View style={[theme.base.main, styles.container]}>
         <StatusBar
-        barStyle="dark-content"
-        backgroundColor={colors.palette.background}
+          barStyle="dark-content"
+          backgroundColor={colors.palette.background}
         />
         <AppBar />
         <Text style={theme.typography.header1}>
@@ -51,6 +52,10 @@ export default class App extends Component {
         <View style={[theme.base.secondary, styles.palette]} />
         <View style={[theme.base.tertiary, styles.palette]} />
         <View style={[theme.base.grey, styles.palette]} />
+        <Button />
+        <Button flat />
+        <Button disabled={true} />
+        <Button flat disabled={true} />
       </View>
     );
   }
