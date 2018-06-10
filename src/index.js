@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   View,
-  StatusBar
+  StatusBar,
+  ScrollView
 } from 'react-native';
 
 import Text from './components/Text';
@@ -30,32 +31,34 @@ export default class App extends Component {
           backgroundColor={colors.palette.background}
         />
         <AppBar />
-        <Text style={theme.typography.header1}>
-          Header 1
+        <ScrollView>
+          <Text style={theme.typography.header1}>
+            Header 1
         </Text>
-        <Text style={theme.typography.header2}>
-          Header 2
+          <Text style={theme.typography.header2}>
+            Header 2
         </Text>
-        <Text style={theme.typography.header3}>
-          Header 3
+          <Text style={theme.typography.header3}>
+            Header 3
         </Text>
-        <Text style={theme.typography.paragraph}>
-          Paragraph
+          <Text style={theme.typography.paragraph}>
+            Paragraph
         </Text>
-        <Text style={theme.typography.caption}>
-          Caption
+          <Text style={theme.typography.caption}>
+            Caption
         </Text>
-        <Text style={theme.typography.small}>
-          Small
+          <Text style={theme.typography.small}>
+            Small
         </Text>
-        <View style={[theme.base.primary, styles.palette]} />
-        <View style={[theme.base.secondary, styles.palette]} />
-        <View style={[theme.base.tertiary, styles.palette]} />
-        <View style={[theme.base.grey, styles.palette]} />
-        <Button />
-        <Button flat />
-        <Button disabled={true} />
-        <Button flat disabled={true} />
+          <View style={[theme.base.primary, styles.palette]} />
+          <View style={[theme.base.secondary, styles.palette]} />
+          <View style={[theme.base.tertiary, styles.palette]} />
+          <View style={[theme.base.grey, styles.palette]} />
+          <Button />
+          <Button flat />
+          <Button disabled={true} />
+          <Button flat disabled={true} />
+        </ScrollView>
       </View>
     );
   }
