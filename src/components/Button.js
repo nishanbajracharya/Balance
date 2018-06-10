@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button as RNButton } from 'react-native-elements';
 import { TouchableHighlight } from 'react-native';
+import { Button as RNButton } from 'react-native-elements';
 
 import fonts from '../constants/fonts';
 import colors from '../constants/colors';
@@ -44,6 +44,7 @@ const styles = {
     },
   },
   touchable: {
+    margin: 20,
     borderRadius: 4
   }
 }
@@ -59,11 +60,8 @@ const Button = ({
 }) => <RNButton
     style={styles.touchable}
     title={label.toUpperCase()}
-    activeOpacity={flat ? 0.7 : 0.9}
-    TouchableComponent={TouchableHighlight}
-    disabledTextStyle={[styles.disabledText, disabledLabelStyle]}
-    textStyle={[styles.text, flat && styles.textFlat, labelStyle]}
-    underlayColor={flat ? colors.palette.primary : colors.basic.white}
+    disabledTitleStyle={[styles.disabledText, disabledLabelStyle]}
+    titleStyle={[styles.text, flat && styles.textFlat, labelStyle]}
     disabledStyle={[styles.disabled, flat && styles.disabledFlat, disabledStyle]}
     buttonStyle={[styles.buttonBase, flat && styles.buttonFlat, !flat && styles.shadow, style]}
     {...props} />

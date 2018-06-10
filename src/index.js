@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import Text from './components/Text';
+import Input from './components/Input';
 import AppBar from './components/AppBar';
 import Button from './components/Button';
 
@@ -58,6 +59,7 @@ export default class App extends Component {
           <Button flat />
           <Button disabled={true} />
           <Button flat disabled={true} />
+          <Input placeholder='BASIC INPUT'/>
         </ScrollView>
       </View>
     );
