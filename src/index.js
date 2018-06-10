@@ -59,7 +59,7 @@ export default class App extends Component {
           <Button flat />
           <Button disabled={true} />
           <Button flat disabled={true} />
-          <Input placeholder='BASIC INPUT'/>
+          <Input />
         </ScrollView>
       </View>
     );
